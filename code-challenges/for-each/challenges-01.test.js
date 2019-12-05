@@ -133,7 +133,7 @@ const createList = (availableItems) => {
 	availableItems.forEach(function(item){
 		if (item.available == true){
 			groceryList.push(item.name)
-			console.log(groceryList)
+			// console.log(groceryList)
 		}
 
 	})
@@ -158,19 +158,19 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
 	arr.forEach(function(item){
 		if(item%3 == 0 ){
-			console.log(item)
+			// console.log(item)
 			arr[item-1] = "Fizz";
 		}
 		else if( item%5 == 0){
-			console.log(item)
+			// console.log(item)
 			arr[item-1] = "Buzz";
 		}
 		if (item%3 == 0 && item%5 == 0){
-			console.log(item)
+			// console.log(item)
 			arr[item-1] = "Fizz Buzz";
 		}
 	})
-	console.log(arr);
+	// console.log(arr);
 	return arr;
 	// Solution code here...
 };
