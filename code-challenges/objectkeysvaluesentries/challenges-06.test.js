@@ -96,19 +96,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 const hasChildrenValues = (arr, character) => {
    
     var hasChildren;
-    console.log(Object.values(arr)[2].children.length)
+    // console.log(Object.values(arr)[2].children.length)
   
     for (var x = 0; x < arr.length; x++) {
       if (Object.values(arr)[x].name == character && Object.values(arr)[x].children.length > 0) {
-        console.log("testing true")
+        // console.log("testing true")
         hasChildren = true;
         break;
       } if (Object.values(arr)[x].children.length == 0) {
-        console.log("testing false")
+        // console.log("testing false")
         hasChildren = false;
       }
     }
-    console.log(hasChildren)
+    // console.log(hasChildren)
     return hasChildren;
 };
 
@@ -124,11 +124,11 @@ const hasChildrenEntries = (arr, character) => {
     var hasChildren;
     for (var x = 0; x < arr.length; x++) {
         if (arr[x].name == character &&  (Object.entries(arr[x])[2])[1].length > 0) {
-            console.log("testing")
+            // console.log("testing")
             hasChildren = true;
             break;
         } if ((Object.entries(arr[x])[2])[1].length == 0)   {
-            console.log("testing")
+            // console.log("testing")
             hasChildren = false;
         }
     }
@@ -166,7 +166,7 @@ const totalCharacters = (arr) => {
 for (var x = 0; x < childrenCount.length; x++){
   childrenSum += childrenCount[x];
 }
-console.log(childrenSum + nameCount.length + spouseCount.length)
+// console.log(childrenSum + nameCount.length + spouseCount.length)
 
 return childrenSum + nameCount.length + spouseCount.length;
     // Solution code here...
