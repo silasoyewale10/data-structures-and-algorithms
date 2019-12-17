@@ -12,20 +12,27 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-    // var arr = []
+    var myStart = 0;
     // var answer = input.map(item =>{
-        
+    return input.reduce((acc, item) => {
+        // console.log('item is ', item)
+        // console.log('acc is ', acc)
+        return acc + item.filter(eachNum => eachNum == target).length;
+        console.log('eachNum is ' , eachNum)
+    }, myStart);
+
     // (item == target)
     // console.log(item)
     // })
     // console.log ('answer is ' , answer)
-            // arr.push(item)
-        
-        // console.log('arr is', arr)
+    // arr.push(item)
+
+    // console.log('arr is', arr)
 
 
-  // Solution code here...
+    // Solution code here...
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -39,12 +46,12 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
     var sum = 0;
-    for (var x= 0; x< input.length; x++){
+    for (var x = 0; x < input.length; x++) {
         var targetedArray = input[x];
-       for (var j = 0; j < targetedArray.length; j++){
-           sum+=targetedArray[j]
+        for (var j = 0; j < targetedArray.length; j++) {
+            sum += targetedArray[j]
             // console.log(sum)
-       }
+        }
     }
     return sum;
     // Solution code here...
@@ -63,7 +70,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-    
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,10 +136,10 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-    var arr = [] ;
+    var arr = [];
     var realSent;
-    for(var x = 0; x < data.length; x++){
-        if (data[x].gender == 'male' || data[x].gender == 'female'){
+    for (var x = 0; x < data.length; x++) {
+        if (data[x].gender == 'male' || data[x].gender == 'female') {
             arr.push(data[x].name)
         }
     }
@@ -162,49 +169,49 @@ Run your tests from the console: jest challenges-10.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-// describe('Testing challenge 1', () => {
-//     test('It should return the number of times the input is in the nested arrays', () => {
-//         expect(count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(4);
-//         expect(count(3, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(2);
-//         expect(count(12, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(0);
-//     });
-//     test('It should work on empty arrays', () => {
-//         expect(count(5, [[1, 3, 5, 7, 9], [], [5, 5, 5], [1, 2, 3], []])).toStrictEqual(4);
-//         expect(count(5, [])).toStrictEqual(0);
-//     });
-// });
-
-// describe('Testing challenge 2', () => {
-//     test('It should add all the numbers in the arrays', () => {
-//         const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
-
-//         expect(totalSum(nums)).toStrictEqual(66);
-//     });
-// });
-
-describe('Testing challenge 3', () => {
-    // test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', () => {
-    //     expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
-    // });
-
-    test('It should return an empty array if none of the numbers are divisible by five', () => {
-        expect(divisibleByFiveTwoToThePower([[1, 2, 3], [5, 10, 15]])).toStrictEqual([[], [32, 1024, 32768]]);
+describe('Testing challenge 1', () => {
+    test('It should return the number of times the input is in the nested arrays', () => {
+        expect(count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(4);
+        expect(count(3, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(2);
+        expect(count(12, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(0);
     });
-
-    // test('It should return an empty array if the values are not numbers', () => {
-    //     expect(divisibleByFiveTwoToThePower([['one', 'two', 'five'], ['5', '10', '15'], [5]])).toStrictEqual([[], [], [32]]);
-    // });
+    test('It should work on empty arrays', () => {
+        expect(count(5, [[1, 3, 5, 7, 9], [], [5, 5, 5], [1, 2, 3], []])).toStrictEqual(4);
+        expect(count(5, [])).toStrictEqual(0);
+    });
 });
 
-// describe('Testing challenge 4', () => {
-//     test('It should return only characters that are male or female', () => {
-//         expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
-//         expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, { name: 'persontwo', gender: 'male' }])).toStrictEqual('person and persontwo');
+describe('Testing challenge 2', () => {
+    test('It should add all the numbers in the arrays', () => {
+        const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
+
+        expect(totalSum(nums)).toStrictEqual(66);
+    });
+});
+
+// describe('Testing challenge 3', () => {
+//     // test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', () => {
+//     //     expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
+//     // });
+
+//     test('It should return an empty array if none of the numbers are divisible by five', () => {
+//         expect(divisibleByFiveTwoToThePower([[1, 2, 3], [5, 10, 15]])).toStrictEqual([[], [32, 1024, 32768]]);
 //     });
+
+//     // test('It should return an empty array if the values are not numbers', () => {
+//     //     expect(divisibleByFiveTwoToThePower([['one', 'two', 'five'], ['5', '10', '15'], [5]])).toStrictEqual([[], [], [32]]);
+//     // });
 // });
 
-// describe('Testing challenge 5', () => {
-//     test('It should return the name of the shortest character', () => {
-//         expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
-//     });
-// });
+describe('Testing challenge 4', () => {
+    test('It should return only characters that are male or female', () => {
+        expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
+        expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, { name: 'persontwo', gender: 'male' }])).toStrictEqual('person and persontwo');
+    });
+});
+
+describe('Testing challenge 5', () => {
+    test('It should return the name of the shortest character', () => {
+        expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
+    });
+});
