@@ -20,5 +20,10 @@ The approach I took is to loop through the input array and reverse the indexes o
 Get the length of the array, declare an empty array, and loop over the input array. Declare a count to increase after each iteration and set the new array at position counter to be the postition i of the input array. Increment counter and return the new array. 
 The big 0 is linear. Just one for loop.
 
+# Image for whiteboard
+<img src="./assets/array-reverse.JPG"
+     alt="White Board Picture"
+     style="width: 200px;" />
+
 
 
