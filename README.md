@@ -21,7 +21,7 @@ Get the length of the array, declare an empty array, and loop over the input arr
 The big 0 is linear. Just one for loop.
 
 # Image for whiteboard
-<img src="./assets/array-reverse.JPG"
+<img src="./challenges/assets/array-reverse.JPG"
      alt="White Board Picture"
      style="width: 200px;" />
 
