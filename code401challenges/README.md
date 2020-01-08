@@ -22,6 +22,6 @@ Finally rerturn the new array.
 The big 0 is linear. Just one for loop.
 
 # Image for whiteboard
-<img src="./code401challenges/insert-into-middle-whiteboard.JPG"
+<img src="./assets/insert-into-middle-whiteboard.JPG"
      alt="White Board Picture"
      style="width: 200px;" />
